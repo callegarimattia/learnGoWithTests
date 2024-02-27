@@ -12,3 +12,6 @@ linters:
     - scopelint
     - interfacer
     - depguard
+    - gomnd
+    - goerr113
+    - testpackage

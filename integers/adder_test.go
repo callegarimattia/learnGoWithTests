@@ -1,16 +1,14 @@
-package integers_test
+package integers
 
 import (
 	"fmt"
 	"testing"
-
-	"callegarimattia.com/integers"
 )
 
 func TestAdd(t *testing.T) {
 	t.Parallel()
 
-	sum := integers.Add(2, 2)
+	sum := Add(2, 2)
 	expected := 4
 
 	if sum != expected {
@@ -19,7 +17,7 @@ func TestAdd(t *testing.T) {
 }
 
 func ExampleAdd() {
-	sum := integers.Add(1, 5)
+	sum := Add(1, 5)
 	fmt.Println(sum)
 	// Output: 6
 }

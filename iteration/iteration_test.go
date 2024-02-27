@@ -1,10 +1,8 @@
-package iteration_test
+package iteration
 
 import (
 	"fmt"
 	"testing"
-
-	"callegarimattia.com/iteration"
 )
 
 func TestRepeat(t *testing.T) {
@@ -14,7 +12,7 @@ func TestRepeat(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			repeated := iteration.Repeat("a", 5)
+			repeated := Repeat("a", 5)
 			expected := "aaaaa"
 
 			if repeated != expected {
@@ -26,7 +24,7 @@ func TestRepeat(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			repeated := iteration.Repeat("a", 20)
+			repeated := Repeat("a", 20)
 			expected := "aaaaaaaaaaaaaaaaaaaa"
 
 			if repeated != expected {
@@ -37,7 +35,7 @@ func TestRepeat(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			repeated := iteration.Repeat("aa", -1)
+			repeated := Repeat("aa", -1)
 			expected := ""
 
 			if expected != repeated {
@@ -48,12 +46,12 @@ func TestRepeat(t *testing.T) {
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		iteration.Repeat("a", 5)
+		Repeat("a", 5)
 	}
 }
 
 func ExampleRepeat() {
-	repeated := iteration.Repeat("a", 5)
+	repeated := Repeat("a", 5)
 	fmt.Println(repeated)
 	// Output: aaaaa
 }

@@ -1,9 +1,7 @@
-package helloworld_test
+package helloworld
 
 import (
 	"testing"
-
-	"callegarimattia.com/helloworld"
 )
 
 func TestHello(t *testing.T) {
@@ -13,7 +11,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("", "")
+			got := Hello("", "")
 			want := "Hello, world!"
 			assertCorrect(t, got, want)
 		},
@@ -22,7 +20,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("Mario", "")
+			got := Hello("Mario", "")
 			want := "Hello, Mario!"
 			assertCorrect(t, got, want)
 		})
@@ -30,7 +28,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("Elodie", "Spanish")
+			got := Hello("Elodie", "Spanish")
 			want := "Hola, Elodie!"
 			assertCorrect(t, got, want)
 		})
@@ -38,7 +36,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("Luca", "French")
+			got := Hello("Luca", "French")
 			want := "Bonjour, Luca!"
 			assertCorrect(t, got, want)
 		})
@@ -46,7 +44,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("Mattia", "Italian")
+			got := Hello("Mattia", "Italian")
 			want := "Buongiorno, Mattia!"
 			assertCorrect(t, got, want)
 		})
@@ -54,7 +52,7 @@ func TestHello(t *testing.T) {
 		func(t *testing.T) {
 			t.Parallel()
 
-			got := helloworld.Hello("Elodie", "Portuguese")
+			got := Hello("Elodie", "Portuguese")
 			want := "Oi, Elodie!"
 			assertCorrect(t, got, want)
 		})
