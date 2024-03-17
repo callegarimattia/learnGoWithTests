@@ -11,20 +11,10 @@ func Sum(numbers []int) int {
 }
 
 func All(numbersToSum [][]int) []int {
-	sums := make([]int, len(numbersToSum))
+	sums := []int{}
 
-	for i, numbers := range numbersToSum {
-		sums[i] = Sum(numbers)
-	}
-
-	return sums
-}
-
-func AllUnoptimized(numbersToSum [][]int) []int {
-	var sums []int //nolint: prealloc
-
-	for _, nums := range numbersToSum {
-		sums = append(sums, Sum(nums))
+	for _, numbers := range numbersToSum {
+		sums = append(sums, Sum(numbers))
 	}
 
 	return sums

@@ -33,13 +33,6 @@ func TestSumAll(t *testing.T) {
 func BenchmarkSumAll(b *testing.B) {
 	sliceInputs := GetInputs(b)
 	for i := 0; i < b.N; i++ {
-		sum.AllUnoptimized(sliceInputs)
-	}
-}
-
-func BenchmarkSumAllOptim(b *testing.B) {
-	sliceInputs := GetInputs(b)
-	for i := 0; i < b.N; i++ {
 		sum.All(sliceInputs)
 	}
 }
