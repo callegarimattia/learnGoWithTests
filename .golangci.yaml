@@ -15,3 +15,6 @@ linters:
     - gomnd
     - goerr113
     - testpackage
+    - paralleltest
+    - exhaustruct
+    - varnamelen

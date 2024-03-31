@@ -1,4 +1,4 @@
-package sum_test
+package sum
 
 import (
 	"crypto/rand"
@@ -6,7 +6,6 @@ import (
 	"reflect"
 	"testing"
 
-	"callegarimattia.com/sum"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -14,7 +13,7 @@ func TestSum(t *testing.T) {
 	t.Parallel()
 
 	numbers := []int{1, 2, 3, 4, 5}
-	got := sum.Sum(numbers)
+	got := Sum(numbers)
 	want := 15
 	assert.Equal(t, want, got)
 }
@@ -22,7 +21,7 @@ func TestSum(t *testing.T) {
 func TestSumAll(t *testing.T) {
 	t.Parallel()
 
-	got := sum.All([][]int{{1, 2}, {2}})
+	got := All([][]int{{1, 2}, {2}})
 	want := []int{3, 2}
 
 	if !reflect.DeepEqual(got, want) {
@@ -33,7 +32,7 @@ func TestSumAll(t *testing.T) {
 func BenchmarkSumAll(b *testing.B) {
 	sliceInputs := GetInputs(b)
 	for i := 0; i < b.N; i++ {
-		sum.All(sliceInputs)
+		All(sliceInputs)
 	}
 }
 
